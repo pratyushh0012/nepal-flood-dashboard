@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>After the Bhotekoshi Flood</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>body{margin:0}
+/* Layout: one reading column; impact tiles, then the long-run gains, then what the flood puts at risk */
+:root{
+  --bg:#f4f6f6;--panel:#ffffff;--fg:#1b2326;--muted:#5a676c;--line:#dbe1e3;
+  --river:#2c6e8f;--food:#c2562b;--edu:#6a4fa3;--good:#3d7a4f;
+  --display:"Fraunces",Georgia,serif;--body:"Source Sans 3",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a1d;--panel:#1a2428;--fg:#e6ecee;--muted:#98a6ab;--line:#2c393e;--river:#6fb3d4;--food:#e58a5f;--edu:#a98fdc;--good:#7cbf8e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121a1d;--panel:#1a2428;--fg:#e6ecee;--muted:#98a6ab;--line:#2c393e;--river:#6fb3d4;--food:#e58a5f;--edu:#a98fdc;--good:#7cbf8e;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+.eyebrow{font-size:15px;color:var(--muted)}
+h1{font-family:var(--display);font-size:clamp(30px,5vw,46px);line-height:1.1;margin:6px 0 10px;text-wrap:balance}
+h1 .f{color:var(--food)} h1 .e{color:var(--edu)}
+h2{font-family:var(--display);font-size:22px;margin:0 0 4px;text-wrap:balance}
+p{margin:0;max-width:66ch} .lede{color:var(--muted);font-size:18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.tile{background:var(--panel);border:1px solid var(--line);padding:14px;display:grid;gap:4px;align-content:start}
+.tile b{font-family:var(--display);font-size:30px;color:var(--c);font-variant-numeric:tabular-nums}
+.tile span{font-size:14px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+.panel{background:var(--panel);border:1px solid var(--line);padding:20px;display:grid;gap:12px;min-width:0}
+.cap{font-size:14px;color:var(--muted)}
+.chart{position:relative;height:290px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 14px var(--body);padding:6px 12px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.seg button:focus-visible{outline:2px solid var(--river);outline-offset:2px}
+.insight{border-left:3px solid var(--river);padding:4px 0 4px 14px}
+.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.chain span{padding:2px 0}
+.chain i{font-style:normal;color:var(--muted)}
+.concl{display:block}.concl-text p{max-width:none}.concl-text{display:grid;gap:12px;min-width:0}.venn{width:100%;max-width:400px;height:auto;font-family:var(--body)}@media (max-width:760px){.concl{grid-template-columns:1fr}}
+footer{font-size:13px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--river)}
+</style></head><body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Data Viz 2026 · Theme: Food and Education · Nepal</div>
+    <div class="eyebrow" style="color:var(--fg);font-weight:600">Team Nakshatra · Pratyush Amatya and Ira Sharma</div>
+    <h1>How the Bhotekoshi flood affected children's food and schooling in Nepal</h1>
+    <p class="lede">On 26 August 2026, floods hit the Bhotekoshi–Trishuli corridor in Rasuwa, Nuwakot and Dhading districts. This dashboard looks at what the flood meant for children's nutrition and education, and what it could mean for Nepal's progress on SDG 2 (Zero Hunger) and SDG 4 (Quality Education).</p>
+  </header>
+
+  <section class="tiles" aria-label="Flood impact">
+    <div class="tile" style="--c:var(--river)"><b>≈332</b><span>people estimated dead, hundreds missing (UNICEF, 27 Aug)</span></div>
+    <div class="tile" style="--c:var(--river)"><b>84,000+</b><span>people affected, over 32,000 of them children</span></div>
+    <div class="tile" style="--c:var(--food)"><b>1,500+</b><span>flood-hit children with moderate acute malnutrition, plus 13 severe cases</span></div>
+    <div class="tile" style="--c:var(--edu)"><b>38</b><span>schools destroyed (18) or damaged (20) in the first count</span></div>
+    <div class="tile" style="--c:var(--edu)"><b>≈10,000</b><span>school-age children needing urgent support to keep learning</span></div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div><h2>Child stunting in Nepal, 2001–2022</h2>
+      <p class="cap">Stunting among children under 5 in Nepal, % (Nepal Demographic and Health Survey)</p></div>
+      <div class="chart"><canvas id="c-stunt" aria-label="Line chart of Nepal child stunting 2001 to 2022"></canvas></div>
+      <p class="insight">Stunting fell from 57% to 25% between 2001 and 2022. A disaster like this flood puts that progress at risk, because poor nutrition in early childhood can cause lasting stunting.</p>
+    </div>
+    <div class="panel">
+      <div><h2>Child malnutrition before the flood</h2>
+      <p class="cap">National screening, April–May 2026: children found with acute malnutrition, of 1,035,201 screened</p></div>
+      <div class="chart"><canvas id="c-screen" aria-label="Bar chart of acute malnutrition screening results"></canvas></div>
+      <p class="insight">About 1 in 12 children screened had acute malnutrition before the flood struck. The flood-affected districts started from this baseline.</p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div><h2>Facilities damaged by the flood</h2>
+    <p class="cap">Facilities reported damaged or destroyed across 17 municipalities in six districts (UNICEF, October 2026). Use the buttons to filter.</p></div>
+    <div class="seg" role="group" aria-label="Filter">
+      <button id="b-all" aria-pressed="true" data-k="all">All facilities</button>
+      <button id="b-food" aria-pressed="false" data-k="food">Food &amp; health (SDG 2, 3, 6)</button>
+      <button id="b-edu" aria-pressed="false" data-k="edu">Education (SDG 4)</button>
+    </div>
+    <div class="chart"><canvas id="c-dmg" aria-label="Bar chart of damaged facilities"></canvas></div>
+    <div class="chain" aria-label="How the impacts connect">
+      <span>Flood</span><i>→</i><span>Lost crops, income, clean water</span><i>→</i><span style="border-color:var(--food)">Acute malnutrition</span><i>→</i><span style="border-color:var(--edu)">Schools lost, children out of class</span><i>→</i><span>Lower learning, lifelong stunting risk</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Conclusion</h2>
+    <div class="concl"><div class="concl-text">
+    <p>Disaster reports usually focus on deaths and damaged homes. The data here shows a longer-term cost. Families who lost crops and income are relying on relief food, more children are malnourished, and damaged schools mean children are missing both lessons and school meals. Recovery plans should address nutrition and education together, alongside clean water (SDG 6) and flood resilience (SDG 13), because the flood affected all of them at once.</p>
+    <p>A flood is usually counted in deaths and destroyed homes. The longer cost is quieter. Families who lose fields and income feed children on relief noodles, malnutrition rises, and with schools washed away the school meal and the classroom disappear together. Recovery that rebuilds schools without restoring nutrition, or feeds children without getting them back to class, will fix only half the problem. In Nepal's flood zones, Zero Hunger and Quality Education have to be rebuilt together.</p>
+  </div>
+    </div>
+  </section>
+
+  <footer>
+    <div><strong>Team Nakshatra:</strong> Pratyush Amatya and Ira Sharma</div>
+    <div><strong>Sources:</strong> <a href="https://www.unicef.org/asia-pacific/press-releases/flash-floods-nepal-leave-more-17000-children-need-urgent-humanitarian-assistance" target="_blank" rel="noopener">UNICEF, flash floods in Nepal press release (27 Aug 2026)</a> · <a href="https://kathmandupost.com/health/2026/10/17/over-1-500-flood-hit-children-suffer-acute-malnutrition-1792201083" target="_blank" rel="noopener">The Kathmandu Post, 17 Oct 2026</a>, citing Nepal's Department of Health Services and UNICEF · Nepal Demographic and Health Survey 2001–2022.</div>
+    <div>Early disaster figures are provisional and were revised as assessments continued; the school count of 38 is UNICEF's first estimate, later reported as 23 damaged or destroyed across a wider area.</div>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const css=k=>getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+const dmg={labels:["Toilets (÷100)","Water systems","Schools","Health facilities"],v:[100,64,23,7],grp:["food","food","edu","food"],raw:[10000,64,23,7]};
+let charts=[];
+function build(){
+  charts.forEach(c=>c.destroy());charts=[];
+  Chart.defaults.color=css("--muted");Chart.defaults.font.family=css("--body");Chart.defaults.borderColor=css("--line");
+  charts.push(new Chart(document.getElementById("c-stunt"),{type:"line",data:{labels:["2001","2006","2011","2016","2022"],datasets:[{data:[57,49,41,36,25],borderColor:css("--good"),backgroundColor:css("--good")+"22",fill:true,tension:.25,pointRadius:4}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+"% of under-5s stunted"}}},scales:{y:{min:0,max:60,title:{display:true,text:"% stunted"}}}}}));
+  charts.push(new Chart(document.getElementById("c-screen"),{type:"bar",data:{labels:["Moderate acute","Severe acute"],datasets:[{data:[69896,18309],backgroundColor:[css("--food")+"aa",css("--food")],borderRadius:4}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+" children"}}},scales:{y:{min:0,title:{display:true,text:"Children"}}}}}));
+  const k=document.querySelector(".seg [aria-pressed=true]").dataset.k;
+  const idx=dmg.labels.map((_,i)=>i).filter(i=>k==="all"||dmg.grp[i]===k);
+  charts.push(new Chart(document.getElementById("c-dmg"),{type:"bar",data:{labels:idx.map(i=>dmg.labels[i]),datasets:[{data:idx.map(i=>dmg.v[i]),backgroundColor:idx.map(i=>dmg.grp[i]==="edu"?css("--edu"):css("--river")),borderRadius:4}]},
+    options:{indexAxis:"y",maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>dmg.raw[idx[c.dataIndex]].toLocaleString()+" damaged or destroyed"}}},scales:{x:{min:0,title:{display:true,text:"Count (toilets shown in hundreds)"}}}}}));
+}
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));build();}));
+if(window.Chart){try{build()}catch(e){console.error(e)};matchMedia("(prefers-color-scheme: dark)").addEventListener("change",build);
+  new MutationObserver(build).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});}
+</script>
+
+</body></html>
